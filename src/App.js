@@ -3,7 +3,7 @@ import NavbarPrimary from './view/components/NavbarPrimary';
 import HomePage from './view/home/HomePage';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
       <main className={` ${darkMode && 'dark-mode'}`}>
