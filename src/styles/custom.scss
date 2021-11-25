@@ -1,0 +1,85 @@
+// Then add additional custom code here
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.top-20 {
+  top: 20px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-outline-blue:hover {
+  color: $white;
+}
+
+.rounded-lg {
+  border-radius: 0.6rem !important;
+}
+
+.rounded-xl {
+  border-radius: 1.5rem !important;
+}
+
+.rounded-right-full {
+  border-radius: 0 50% 50% 0;
+}
+
+.logo {
+  width: 180px;
+  height: 120px;
+  img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.icon-size {
+  display: block;
+  height: 70px;
+  width: 70px;
+
+  &-small {
+    display: block;
+    height: 50px;
+    width: 50px;
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &-1 {
+    display: block;
+    height: 100px;
+    min-width: 100px;
+  }
+  &-2 {
+    display: block;
+    height: 130px;
+    min-width: 130px;
+  }
+  &-3 {
+    display: block;
+    height: 160px;
+    min-width: 160px;
+  }
+}
+
+.progress {
+  height: 2rem;
+  font-size: 1.08rem;
+  background-color: #92bdc3;
+  border-radius: 0.25rem;
+}
