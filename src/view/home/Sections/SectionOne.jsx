@@ -111,7 +111,7 @@ const SectionOne = () => {
                 <div className='mt-4'>
                   <button
                     type='button'
-                    className='w-100 btn btn-lg btn-primary rounded-lg'
+                    className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                   >
                     Deposit into Vault
                   </button>
@@ -139,7 +139,7 @@ const SectionOne = () => {
                 <div className='mt-4'>
                   <button
                     type='button'
-                    className='w-100 btn btn-lg btn-primary rounded-lg'
+                    className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                   >
                     Reinvest Rent
                   </button>

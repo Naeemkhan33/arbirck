@@ -70,7 +70,7 @@ const SectionTwo = () => {
                   <div style={{ width: '48%' }}>
                     <button
                       type='button'
-                      className='w-100 btn btn-lg btn-primary rounded-lg'
+                      className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                     >
                       Deposit
                     </button>
@@ -78,7 +78,7 @@ const SectionTwo = () => {
                   <div style={{ width: '48%' }}>
                     <button
                       type='button'
-                      className='w-100 btn btn-lg btn-primary rounded-lg'
+                      className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                     >
                       Withdraw*
                     </button>
@@ -107,7 +107,7 @@ const SectionTwo = () => {
                 <div className='mt-2'>
                   <button
                     type='button'
-                    className='w-100 btn btn-lg btn-primary rounded-lg'
+                    className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                   >
                     Collect Rent
                   </button>

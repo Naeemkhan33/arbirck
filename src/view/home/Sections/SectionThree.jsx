@@ -121,7 +121,7 @@ const SectionThree = () => {
                   <div style={{ width: '48%' }}>
                     <button
                       type='button'
-                      className='w-100 btn btn-lg btn-primary rounded-lg'
+                      className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                     >
                       <small>Buy with FIAT</small>
                     </button>
@@ -129,7 +129,7 @@ const SectionThree = () => {
                   <div style={{ width: '48%' }}>
                     <button
                       type='button'
-                      className='w-100 btn btn-lg btn-primary rounded-lg'
+                      className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                     >
                       <small>Buy with USDC</small>
                     </button>
