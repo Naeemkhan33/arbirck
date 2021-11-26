@@ -16,7 +16,7 @@ const FooterPrimary = () => {
             </div>
           </div>
           <div className='col-11 col-md-4 col-xl-3 mt-4 mt-md-0 ms-md-auto'>
-            <div className='d-flex gap-4 filter-invert'>
+            <div className='d-flex gap-4 filter-invert justify-content-end mt-md-4'>
               <a
                 href='https://t.me/NileRiver_Labs'
                 rel='noopener noreferrer'

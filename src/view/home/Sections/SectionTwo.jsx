@@ -28,7 +28,7 @@ const SectionTwo = () => {
                 </span>
               </div>
               {/* Heading End */}
-              <div className='row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-1 row-cols-xxl-2 justify-content-center mt-2 gy-4'>
+              <div className='row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-1 row-cols-xl-2 justify-content-center mt-2 gy-4'>
                 <Col>
                   <div>
                     <MonochromePie />

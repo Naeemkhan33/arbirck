@@ -37,7 +37,7 @@ const SectionOne = () => {
                       <h4 className='mb-0 fw-bold'>£125k</h4>
                     </div>
                     <div className='mt-1'>
-                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-9 mx-3'>
                         Total invested in Brick Shares
                       </h5>
                     </div>
@@ -56,7 +56,7 @@ const SectionOne = () => {
                       <h4 className='mb-0 fw-bold'>£29k</h4>
                     </div>
                     <div className='mt-1'>
-                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-9 mx-3'>
                         Total paid out in Rent
                       </h5>
                     </div>
@@ -75,7 +75,7 @@ const SectionOne = () => {
                       <h4 className='mb-0 fw-bold'>7.95%</h4>
                     </div>
                     <div className='mt-1'>
-                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-9 mx-3'>
                         Last month's return
                       </h5>
                     </div>
