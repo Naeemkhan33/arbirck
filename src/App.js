@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import NavbarPrimary from './view/components/NavbarPrimary';
-import HomePage from './view/home/HomePage';
+import RoutesPrimary from './RoutesPrimary';
+import FooterPrimary from './view/components/FooterPrimary';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -19,7 +20,8 @@ function App() {
           />
         </button>
         <NavbarPrimary />
-        <HomePage />
+        <RoutesPrimary />
+        <FooterPrimary />
       </main>
     </>
   );

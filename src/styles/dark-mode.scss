@@ -12,6 +12,10 @@
 
   min-height: 100vh;
 
+  .filter-invert {
+    filter: invert(0);
+  }
+
   .text-black-50 {
     color: $white-50 !important;
   }

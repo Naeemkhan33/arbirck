@@ -18,7 +18,7 @@ const NavbarPrimary = () => {
                   type='button'
                   className='btn btn-lg btn-outline-blue border-2 rounded-pill'
                 >
-                  $0.20 Buy
+                  <small>$0.20 Buy</small>
                 </button>
               </li>
               <li>
@@ -26,7 +26,7 @@ const NavbarPrimary = () => {
                   type='button'
                   className='btn btn-lg btn-outline-blue border-2 rounded-pill'
                 >
-                  Connect Wallet
+                  <small>Connect Wallet</small>
                 </button>
               </li>
             </ul>

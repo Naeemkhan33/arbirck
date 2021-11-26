@@ -6,23 +6,19 @@ class MonochromePie extends React.Component {
     super(props);
 
     this.state = {
-      series: [25, 15, 44, 55, 41, 17],
+      series: [25, 15, 44, 55, 41],
       options: {
         chart: {
           width: '100%',
           type: 'pie',
         },
-        labels: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-        ],
+
+        colors: ['#92BDC3', '#6F93A3', '#536A80', '#3C435C', '#261F36'],
+
+        labels: ['London', 'Liverpool', 'Manchester', 'Birmingham', 'Leeds'],
         theme: {
           monochrome: {
-            enabled: true,
+            enabled: false,
           },
         },
         plotOptions: {
@@ -55,8 +51,8 @@ class MonochromePie extends React.Component {
           type='pie'
         />
         <div className='text-center'>
-          <h5 className='fw-bold mb-0'>112</h5>
-          <h5 className='fw-normal mb-0'>Properties Under Management</h5>
+          <h6 className='fw-bold mb-0'>112</h6>
+          <h6 className='fw-normal mb-0'>Properties Under Management</h6>
         </div>
       </div>
     );

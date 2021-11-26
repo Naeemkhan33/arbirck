@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProgressBar } from 'react-bootstrap';
+import { Carousel, ProgressBar } from 'react-bootstrap';
 
 const SectionThree = () => {
   const now = 60;
@@ -23,30 +23,61 @@ const SectionThree = () => {
             <div className='bg-secondary rounded-xl shadow-sm p-4 p-xxl-5 h-100'>
               {/* Heading start */}
               <div className='text-center mb-5 px-0 col-12 col-md-8 col-lg-10 col-xl-6 mx-auto'>
-                <h3 className='mb-0 fw-bold'>
+                <h4 className='mb-0 fw-bold'>
                   18 Cinnamon Street, E1W 3NJ Wapping London
-                </h3>
+                </h4>
               </div>
               {/* Heading End */}
-              <div className='bg-primary shadow rounded-xl p-4 p-xxl-5'>
-                <h4 className='mb-4 fw-bold text-center font-italic'>
-                  Next Property Investment Breakdown
-                </h4>
-                <div className='px-0 col-12 col-md-10 col-lg-12 col-xxl-8 mx-auto'>
-                  <ul className='nav flex-column h5 mb-0'>
-                    {list.map((item) => (
-                      <li className='mt-2'>
-                        <div
-                          className={`d-flex ${
-                            item.bold && 'fw-bold font-italic'
-                          }`}
-                        >
-                          <span>{item.name}</span>
-                          <span className='ms-auto'>{item.value}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+              <div className='row'>
+                <div className='col'>
+                  <div className='bg-primary shadow rounded-xl p-4'>
+                    <h5 className='mb-4 fw-bold text-center font-italic'>
+                      Next Property <br /> Investment Breakdown
+                    </h5>
+                    <div>
+                      <ul className='nav flex-column h6 mb-0'>
+                        {list.map((item) => (
+                          <li className='mt-2'>
+                            <div
+                              className={`d-flex ${
+                                item.bold && 'fw-bold font-italic'
+                              }`}
+                            >
+                              <span>{item.name}</span>
+                              <span className='ms-auto'>{item.value}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-12 col-xl-6 mb-4 mb-xl-0 order-first order-xl-last'>
+                  <div className='h-100 h-100-all'>
+                    <Carousel indicators={false}>
+                      <Carousel.Item>
+                        <img
+                          className='d-block w-100 rounded-xl shadow-sm'
+                          src='https://source.unsplash.com/user/erondu'
+                          alt='First slide'
+                        />
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className='d-block w-100 rounded-xl shadow-sm'
+                          src='https://source.unsplash.com/user/tom'
+                          alt='Second slide'
+                        />
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className='d-block w-100 rounded-xl shadow-sm'
+                          src='https://source.unsplash.com/user/john'
+                          alt='Third slide'
+                        />
+                      </Carousel.Item>
+                    </Carousel>
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,7 +86,7 @@ const SectionThree = () => {
             <div className='bg-secondary rounded-xl shadow-sm p-4 p-xxl-5 position-sticky top-20'>
               <div>
                 <div className='text-center mb-5'>
-                  <h3 className='mb-0 fw-bold'>Investment Round #23</h3>
+                  <h4 className='mb-0 fw-bold'>Investment Round #23</h4>
                 </div>
                 <div className='d-flex align-items-center'>
                   <span className='icon-size-1 me-3'>
@@ -66,11 +97,13 @@ const SectionThree = () => {
                     />
                   </span>
                   <span className='d-flex'>
-                    <div className='display-4 fw-bold'>
+                    <div className='h2 mb-0 fw-bold'>
                       <h5 className='fw-normal mb-0'>Remaining Tokens</h5>
-                      <div className='d-flex align-items-end'>
+                      <div className='d-flex align-items-baseline'>
                         <span>11,250</span>{' '}
-                        <h6 className='text-uppercase'>BRICKS ~$2,250</h6>
+                        <h6 className='mb-0 text-uppercase'>
+                          <div>BRICKS</div> ~$2,250
+                        </h6>
                       </div>
                     </div>
                   </span>

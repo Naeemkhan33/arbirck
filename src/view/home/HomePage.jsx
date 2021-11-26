@@ -5,7 +5,7 @@ import SectionTwo from './Sections/SectionTwo';
 
 const HomePage = () => {
   return (
-    <main className='pt-5'>
+    <main>
       <SectionOne />
       <SectionTwo />
       <SectionThree />

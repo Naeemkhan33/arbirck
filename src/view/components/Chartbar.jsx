@@ -20,7 +20,7 @@ class Chartbar extends React.Component {
         plotOptions: {
           bar: {
             borderRadius: 0,
-            columnWidth: '50%',
+            columnWidth: '70%',
           },
         },
         dataLabels: {
@@ -59,15 +59,16 @@ class Chartbar extends React.Component {
 
         fill: {
           type: 'gradient',
+          colors: ['#208390'],
           gradient: {
             shade: 'light',
             type: 'horizontal',
-            shadeIntensity: 0.25,
+            shadeIntensity: 0,
             gradientToColors: undefined,
             inverseColors: true,
-            opacityFrom: 0.85,
+            opacityFrom: 1,
             opacityTo: 0.85,
-            stops: [50, 0, 100],
+            stops: [0, 0, 0],
           },
         },
       },
@@ -84,8 +85,8 @@ class Chartbar extends React.Component {
           height={305}
         />
         <div className='text-center'>
-          <h5 className='fw-bold mb-0'>84% APR</h5>
-          <h5 className='fw-normal mb-0'>Average of 7% return per month</h5>
+          <h6 className='fw-bold mb-0'>84% APR</h6>
+          <h6 className='fw-normal mb-0'>Average of 7% return per month</h6>
         </div>
       </div>
     );

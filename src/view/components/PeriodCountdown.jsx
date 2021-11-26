@@ -3,7 +3,7 @@ import Countdown from 'react-countdown';
 
 // Random component
 const Completionist = () => (
-  <span className='h2 my-2 fw-bold'>You are good to go!</span>
+  <span className='h3 my-2 fw-bold'>You are good to go!</span>
 );
 
 // Renderer callback with condition
@@ -14,7 +14,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     // Render a countdown
     return (
-      <span className='display-4 fw-bold'>
+      <span className='h2 fw-bold'>
         {days}:{hours}:{minutes}:{seconds}
       </span>
     );

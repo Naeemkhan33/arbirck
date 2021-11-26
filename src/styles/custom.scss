@@ -62,19 +62,26 @@ body {
 
   &-1 {
     display: block;
-    height: 100px;
-    min-width: 100px;
+    height: 80px;
+    width: 80px;
+    min-width: 80px;
   }
   &-2 {
     display: block;
-    height: 130px;
-    min-width: 130px;
+    height: 100px;
+    width: 100px;
+    min-width: 100px;
   }
   &-3 {
     display: block;
-    height: 160px;
-    min-width: 160px;
+    height: 130px;
+    width: 130px;
+    min-width: 130px;
   }
+}
+
+.h-100-all * {
+  height: 100%;
 }
 
 .progress {
@@ -82,4 +89,8 @@ body {
   font-size: 1.08rem;
   background-color: #92bdc3;
   border-radius: 0.25rem;
+}
+
+.filter-invert {
+  filter: invert(1);
 }

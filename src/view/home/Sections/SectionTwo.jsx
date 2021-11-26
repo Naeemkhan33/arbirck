@@ -13,7 +13,7 @@ const SectionTwo = () => {
             <div className='bg-secondary rounded-xl shadow-sm p-4 p-xxl-5 h-100'>
               {/* Heading start */}
               <div className='d-flex flex-wrap align-items-center'>
-                <span className='icon-size-1 me-3 me-md-5'>
+                <span className='icon-size-3 me-3 me-md-5'>
                   <img
                     className='d-block h-100 w-100'
                     src='/assets/percentage.svg'
@@ -21,14 +21,14 @@ const SectionTwo = () => {
                   />
                 </span>
                 <span className='text-center'>
-                  <h4 className='text-black-50 mb-0'>
+                  <h5 className='text-black-50 mb-0'>
                     Portfolio annual percentage yield
-                  </h4>
-                  <div className='display-2 fw-bold'>125.22 % APY</div>
+                  </h5>
+                  <div className='display-5 fw-bold'>125.22 % APY</div>
                 </span>
               </div>
               {/* Heading End */}
-              <div className='row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-1 row-cols-xxl-2 justify-content-center mt-5 gy-4'>
+              <div className='row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-1 row-cols-xxl-2 justify-content-center mt-2 gy-4'>
                 <Col>
                   <div>
                     <MonochromePie />
@@ -54,11 +54,13 @@ const SectionTwo = () => {
                     />
                   </span>
                   <span className='d-flex'>
-                    <div className='display-4 fw-bold'>
-                      <h2 className='fw-bold mb-0'>Vault</h2>
-                      <div className='d-flex align-items-end'>
+                    <div className='h2 mb-0 fw-bold'>
+                      <h4 className='fw-bold mb-0'>Vault</h4>
+                      <div className='d-flex align-items-baseline'>
                         <span>150,000</span>{' '}
-                        <h6 className='text-uppercase'>BRICKS ~$30,000</h6>
+                        <h6 className='mb-0 text-uppercase'>
+                          <div>BRICKS</div> ~$30,000
+                        </h6>
                       </div>
                     </div>
                   </span>
@@ -93,10 +95,10 @@ const SectionTwo = () => {
                     />
                   </span>
                   <span className='d-flex'>
-                    <div className='display-4 fw-bold'>
-                      <div className='d-flex align-items-end'>
+                    <div className='h2 mb-0 fw-bold'>
+                      <div className='d-flex align-items-baseline'>
                         <span>$1,250</span>{' '}
-                        <h6 className='text-uppercase'>USDC</h6>
+                        <h6 className='mb-0 text-uppercase'>USDC</h6>
                       </div>
                     </div>
                   </span>
@@ -112,7 +114,7 @@ const SectionTwo = () => {
                 </div>
                 <div className='text-center mt-4'>
                   <h5 className='mb-0 fw-normal'>Lock up period - Countdown</h5>
-                  <div>
+                  <div className='my-2'>
                     <PeriodCountdown />
                   </div>
                   <h6 className='mb-0 fw-normal'>

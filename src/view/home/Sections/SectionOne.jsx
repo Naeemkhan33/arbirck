@@ -10,7 +10,7 @@ const SectionOne = () => {
             <div className='bg-secondary rounded-xl shadow-sm p-4 p-xxl-5 h-100'>
               {/* Heading start */}
               <div className='d-flex flex-wrap align-items-center'>
-                <span className='icon-size-1 me-3 me-md-5'>
+                <span className='icon-size-2 me-3 me-md-5'>
                   <img
                     className='d-block h-100 w-100'
                     src='/assets/lock.svg'
@@ -18,64 +18,66 @@ const SectionOne = () => {
                   />
                 </span>
                 <span className='text-center'>
-                  <h4 className='text-black-50 mb-0'>Portfolio total value </h4>
-                  <div className='display-2 fw-bold'>£2,532,904</div>
+                  <h5 className='text-black-50 mb-0'>Portfolio total value </h5>
+                  <div className='display-5 fw-bold'>£2,532,904</div>
                 </span>
               </div>
               {/* Heading End */}
-              <div className='row row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-2 row-cols-xxl-3 justify-content-center mt-5 gy-4'>
+              <div className='row row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-2 row-cols-xxl-3 justify-content-center mt-2 gy-4'>
                 <Col>
                   <div className='bg-primary text-white p-3 rounded-xl shadow-sm h-100'>
                     <div className='d-flex align-items-center'>
-                      <span className='icon-size bg-grey rounded-circle p-2 me-3'>
+                      <span className='icon-size p-2 me-3'>
                         <img
                           className='d-block h-100 w-100'
                           src='/assets/v-icon-0.svg'
                           alt='lock'
                         />
                       </span>
-                      <h3 className='mb-0 fw-bold'>£125k</h3>
+                      <h4 className='mb-0 fw-bold'>£125k</h4>
                     </div>
-                    <div className='mt-4'>
-                      <h4 className='mb-0 px-0 col-10'>
+                    <div className='mt-1'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
                         Total invested in Brick Shares
-                      </h4>
+                      </h5>
                     </div>
                   </div>
                 </Col>
                 <Col>
                   <div className='bg-primary text-white p-3 rounded-xl shadow-sm h-100'>
                     <div className='d-flex align-items-center'>
-                      <span className='icon-size bg-grey rounded-circle p-2 me-3'>
+                      <span className='icon-size p-2 me-3'>
                         <img
                           className='d-block h-100 w-100'
                           src='/assets/v-icon-1.svg'
                           alt='lock'
                         />
                       </span>
-                      <h3 className='mb-0 fw-bold'>£29k</h3>
+                      <h4 className='mb-0 fw-bold'>£29k</h4>
                     </div>
-                    <div className='mt-4'>
-                      <h4 className='mb-0 px-0 col-10'>
+                    <div className='mt-1'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
                         Total paid out in Rent
-                      </h4>
+                      </h5>
                     </div>
                   </div>
                 </Col>
                 <Col>
                   <div className='bg-primary text-white p-3 rounded-xl shadow-sm h-100'>
                     <div className='d-flex align-items-center'>
-                      <span className='icon-size bg-grey rounded-circle p-3 me-3'>
+                      <span className='icon-size p-3 me-3'>
                         <img
                           className='d-block h-100 w-100'
                           src='/assets/v-icon-2.svg'
                           alt='lock'
                         />
                       </span>
-                      <h3 className='mb-0 fw-bold'>7.95%</h3>
+                      <h4 className='mb-0 fw-bold'>7.95%</h4>
                     </div>
-                    <div className='mt-4'>
-                      <h4 className='mb-0 px-0 col-10'>Last month's return</h4>
+                    <div className='mt-1'>
+                      <h5 className='mb-0 px-0 col-12 col-xl-8 mx-3'>
+                        Last month's return
+                      </h5>
                     </div>
                   </div>
                 </Col>
@@ -94,11 +96,13 @@ const SectionOne = () => {
                     />
                   </span>
                   <span className='d-flex'>
-                    <div className='display-4 fw-bold'>
-                      <h2 className='fw-bold mb-0'>Wallet</h2>
-                      <div className='d-flex align-items-end'>
+                    <div className='h2 mb-0 fw-bold'>
+                      <h4 className='fw-bold mb-0'>Wallet</h4>
+                      <div className='d-flex align-items-baseline'>
                         <span>100,000</span>{' '}
-                        <h6 className='text-uppercase'>BRICKS ~$20,000</h6>
+                        <h5 className='mb-0 text-uppercase'>
+                          <div>BRICKS</div> ~$20,000
+                        </h5>
                       </div>
                     </div>
                   </span>
@@ -123,10 +127,10 @@ const SectionOne = () => {
                     />
                   </span>
                   <span className='d-flex'>
-                    <div className='display-4 fw-bold'>
-                      <div className='d-flex align-items-end'>
+                    <div className='h2 mb-0 fw-bold'>
+                      <div className='d-flex align-items-baseline'>
                         <span>2,000</span>{' '}
-                        <h6 className='text-uppercase'>USDC</h6>
+                        <h5 className='mb-0 text-uppercase'>USDC</h5>
                       </div>
                     </div>
                   </span>
