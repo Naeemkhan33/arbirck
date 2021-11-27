@@ -12,7 +12,7 @@ const SectionTwo = () => {
           <div className='col'>
             <div className='bg-secondary rounded-xl shadow-sm p-4 p-xxl-5 h-100'>
               {/* Heading start */}
-              <div className='d-flex flex-wrap align-items-center'>
+              <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-md-start'>
                 <span className='icon-size-3 me-3 me-md-5'>
                   <img
                     className='d-block h-100 w-100'
@@ -21,7 +21,7 @@ const SectionTwo = () => {
                   />
                 </span>
                 <span className='text-center'>
-                  <h5 className='text-black-50 mb-0'>
+                  <h5 className='text-black-50 mb-1'>
                     Portfolio annual percentage yield
                   </h5>
                   <div className='display-5 fw-bold'>125.22 % APY</div>
@@ -57,7 +57,7 @@ const SectionTwo = () => {
                     <div className='h2 mb-0 fw-bold'>
                       <h4 className='fw-bold mb-0'>Vault</h4>
                       <div className='d-flex align-items-baseline'>
-                        <span>150,000</span>{' '}
+                        <span className='me-2'>150,000</span>{' '}
                         <h6 className='mb-0 text-uppercase'>
                           <div>BRICKS</div> ~$30,000
                         </h6>
@@ -97,7 +97,7 @@ const SectionTwo = () => {
                   <span className='d-flex'>
                     <div className='h2 mb-0 fw-bold'>
                       <div className='d-flex align-items-baseline'>
-                        <span>$1,250</span>{' '}
+                        <span className='me-2'>$1,250</span>{' '}
                         <h6 className='mb-0 text-uppercase'>USDC</h6>
                       </div>
                     </div>

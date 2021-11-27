@@ -30,7 +30,7 @@ const SectionThree = () => {
               {/* Heading End */}
               <div className='row'>
                 <div className='col'>
-                  <div className='bg-primary shadow rounded-xl p-4'>
+                  <div className='bg-primary text-white shadow rounded-xl p-4'>
                     <h5 className='mb-4 fw-bold text-center font-italic'>
                       Next Property <br /> Investment Breakdown
                     </h5>
@@ -53,7 +53,7 @@ const SectionThree = () => {
                   </div>
                 </div>
                 <div className='col-12 col-xl-6 mb-4 mb-xl-0 order-first order-xl-last'>
-                  <div className='h-100 h-100-all'>
+                  <div className='h-100-all height-size'>
                     <Carousel indicators={false}>
                       <Carousel.Item>
                         <img
@@ -100,7 +100,7 @@ const SectionThree = () => {
                     <div className='h2 mb-0 fw-bold'>
                       <h5 className='fw-normal mb-0'>Remaining Tokens</h5>
                       <div className='d-flex align-items-baseline'>
-                        <span>11,250</span>{' '}
+                        <span className='me-2'>11,250</span>{' '}
                         <h6 className='mb-0 text-uppercase'>
                           <div>BRICKS</div> ~$2,250
                         </h6>

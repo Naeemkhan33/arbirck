@@ -10,13 +10,13 @@ const FooterPrimary = () => {
             <Link to='/' className='d-block logo'>
               <img src='/assets/logo.png' alt='...' />
             </Link>
-            <div>
+            <div className='ms-2'>
               Full-Service DeFi on Moonriver (and more) with countless streams
               of possibilities!
             </div>
           </div>
           <div className='col-11 col-md-4 col-xl-3 mt-4 mt-md-0 ms-md-auto'>
-            <div className='d-flex gap-4 filter-invert justify-content-end mt-md-4'>
+            <div className='d-flex gap-4 filter-invert justify-content-md-end mt-md-4 ms-2'>
               <a
                 href='https://t.me/NileRiver_Labs'
                 rel='noopener noreferrer'
