@@ -36,8 +36,8 @@ const SectionThree = () => {
                     </h5>
                     <div>
                       <ul className='nav flex-column h6 mb-0'>
-                        {list.map((item) => (
-                          <li className='mt-2'>
+                        {list.map((item,index) => (
+                          <li className='mt-2' key={index}>
                             <div
                               className={`d-flex ${
                                 item.bold && 'fw-bold font-italic'
@@ -131,7 +131,7 @@ const SectionThree = () => {
                       type='button'
                       className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                     >
-                      <small>Buy with USDC</small>
+                      <small>Buy with BUSD</small>
                     </button>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 
-const SectionOne = () => {
+const SectionOne = ({brickBalance,busdBalance,depositToVault,buyToken}) => {
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -99,9 +99,9 @@ const SectionOne = () => {
                     <div className='h2 mb-0 fw-bold'>
                       <h4 className='fw-bold mb-0'>Wallet</h4>
                       <div className='d-flex align-items-baseline'>
-                        <span className='me-2'>100,000</span>{' '}
+                        <span className='me-2'>{brickBalance} </span>{' '}
                         <h6 className='mb-0 text-uppercase'>
-                          <div>BRICKS</div> ~$20,000
+                          <div>BRICKS</div> ~${brickBalance}
                         </h6>
                       </div>
                     </div>
@@ -109,7 +109,9 @@ const SectionOne = () => {
                 </div>
 
                 <div className='mt-4'>
+                  <input type='text' id="deposite"/>
                   <button
+                  onClick={()=>depositToVault(document.getElementById("deposite").value)}
                     type='button'
                     className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                   >
@@ -129,17 +131,19 @@ const SectionOne = () => {
                   <span className='d-flex'>
                     <div className='h2 mb-0 fw-bold'>
                       <div className='d-flex align-items-baseline'>
-                        <span className='me-2'>2,000</span>{' '}
-                        <h6 className='mb-0 text-uppercase'>USDC</h6>
+                        <span className='me-2'>{busdBalance}</span>{' '}
+                        <h6 className='mb-0 text-uppercase'>BUSD</h6>
                       </div>
                     </div>
                   </span>
                 </div>
 
                 <div className='mt-4'>
+                <input type='text' id="buy"/>
                   <button
                     type='button'
                     className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
+                    onClick={()=>buyToken(document.getElementById("buy").value)}
                   >
                     Reinvest Rent
                   </button>

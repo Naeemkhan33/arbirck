@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+const NavbarPrimary = (props) => {
 
-const NavbarPrimary = () => {
+
   return (
     <nav>
       <div className='container'>
@@ -18,7 +19,7 @@ const NavbarPrimary = () => {
                   type='button'
                   className='btn btn-lg btn-outline-blue border-2 rounded-pill'
                 >
-                  <small>$0.20 Buy</small>
+                  <small onClick={props.buyToken}>$1 Buy</small>
                 </button>
               </li>
               <li>
@@ -26,7 +27,12 @@ const NavbarPrimary = () => {
                   type='button'
                   className='btn btn-lg btn-outline-blue border-2 rounded-pill'
                 >
-                  <small>Connect Wallet</small>
+                  {props.address === null ?(
+                  <small onClick={props.connectWallet}>Connect Wallet</small>):
+                  (
+                  <small> {props.address.slice(0,5)}...{props.address.slice(38)}</small>
+                  )
+                  }
                 </button>
               </li>
             </ul>

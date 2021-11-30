@@ -4,7 +4,7 @@ import Chartbar from '../../components/Chartbar';
 import MonochromePie from '../../components/MonochromePie';
 import PeriodCountdown from '../../components/PeriodCountdown';
 
-const SectionTwo = () => {
+const SectionTwo = ({withdraw,depositToVault,getReward}) => {
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -68,17 +68,21 @@ const SectionTwo = () => {
 
                 <div className='mt-4 d-flex justify-content-between'>
                   <div style={{ width: '48%' }}>
+                  <input type='text' id="deposit"/>
                     <button
                       type='button'
                       className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
+                      onClick={()=>depositToVault(document.getElementById("deposit").value)}
                     >
                       Deposit
                     </button>
                   </div>
                   <div style={{ width: '48%' }}>
+                    <input type='text' id="withdraw"/>
                     <button
                       type='button'
                       className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
+                      onClick={()=>withdraw(document.getElementById("withdraw").value)}
                     >
                       Withdraw*
                     </button>
@@ -98,7 +102,7 @@ const SectionTwo = () => {
                     <div className='h2 mb-0 fw-bold'>
                       <div className='d-flex align-items-baseline'>
                         <span className='me-2'>$1,250</span>{' '}
-                        <h6 className='mb-0 text-uppercase'>USDC</h6>
+                        <h6 className='mb-0 text-uppercase'>BUSD</h6>
                       </div>
                     </div>
                   </span>
@@ -108,6 +112,7 @@ const SectionTwo = () => {
                   <button
                     type='button'
                     className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
+                    onClick={getReward}
                   >
                     Collect Rent
                   </button>
