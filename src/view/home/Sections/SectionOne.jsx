@@ -1,7 +1,12 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 
-const SectionOne = ({brickBalance,busdBalance,depositToVault,buyToken}) => {
+const SectionOne = ({
+  brickBalance,
+  busdBalance,
+  depositToVault,
+  buyToken,
+}) => {
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -109,9 +114,15 @@ const SectionOne = ({brickBalance,busdBalance,depositToVault,buyToken}) => {
                 </div>
 
                 <div className='mt-4'>
-                  <input type='text' id="deposite"/>
+                  <input
+                    type='text'
+                    className='form-control rounded-lg mb-3'
+                    id='deposite'
+                  />
                   <button
-                  onClick={()=>depositToVault(document.getElementById("deposite").value)}
+                    onClick={() =>
+                      depositToVault(document.getElementById('deposite').value)
+                    }
                     type='button'
                     className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
                   >
@@ -139,11 +150,17 @@ const SectionOne = ({brickBalance,busdBalance,depositToVault,buyToken}) => {
                 </div>
 
                 <div className='mt-4'>
-                <input type='text' id="buy"/>
+                  <input
+                    type='text'
+                    className='form-control rounded-lg mb-3'
+                    id='buy'
+                  />
                   <button
                     type='button'
                     className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
-                    onClick={()=>buyToken(document.getElementById("buy").value)}
+                    onClick={() =>
+                      buyToken(document.getElementById('buy').value)
+                    }
                   >
                     Reinvest Rent
                   </button>
