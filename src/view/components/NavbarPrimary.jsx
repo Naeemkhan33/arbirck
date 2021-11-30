@@ -19,7 +19,7 @@ const NavbarPrimary = (props) => {
                   type='button'
                   className='btn btn-lg btn-outline-blue border-2 rounded-pill'
                 >
-                  <small onClick={props.buyToken}>$1 Buy</small>
+                  <small onClick={()=>props.buyToken("1")}>$1 Buy</small>
                 </button>
               </li>
               <li>

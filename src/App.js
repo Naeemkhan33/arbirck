@@ -62,7 +62,7 @@ function App() {
     try {
       let a = await web3.utils.toWei(amount);
       await busd.methods
-        .approve(ico.address, amount)
+        .approve(ICO.address, a)
         .send({ from: window.ethereum.selectedAddress })
         .on("transactionHash", async () => {
           await ico.methods
