@@ -4,7 +4,11 @@ import Chartbar from '../../components/Chartbar';
 import MonochromePie from '../../components/MonochromePie';
 import PeriodCountdown from '../../components/PeriodCountdown';
 
+<<<<<<< HEAD
 const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getReward}) => {
+=======
+const SectionTwo = ({ withdraw, depositToVault, getReward }) => {
+>>>>>>> 84e0e837f71fb06374be2940efeeb967bb1e9fd0
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -67,22 +71,34 @@ const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getRewar
                 </div>
 
                 <div className='mt-4 d-flex justify-content-between'>
-                  <div style={{ width: '48%' }}>
-                  <input type='text' id="deposit"/>
+                  <div className='d-flex flex-column' style={{ width: '48%' }}>
+                    <input
+                      type='text'
+                      className='form-control rounded-lg mb-3'
+                      id='deposit'
+                    />
                     <button
                       type='button'
                       className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
-                      onClick={()=>depositToVault(document.getElementById("deposit").value)}
+                      onClick={() =>
+                        depositToVault(document.getElementById('deposit').value)
+                      }
                     >
                       Deposit
                     </button>
                   </div>
-                  <div style={{ width: '48%' }}>
-                    <input type='text' id="withdraw"/>
+                  <div className='d-flex flex-column' style={{ width: '48%' }}>
+                    <input
+                      type='text'
+                      className='form-control rounded-lg mb-3'
+                      id='withdraw'
+                    />
                     <button
                       type='button'
                       className='w-100 h-100 btn btn-lg btn-primary rounded-lg'
-                      onClick={()=>withdraw(document.getElementById("withdraw").value)}
+                      onClick={() =>
+                        withdraw(document.getElementById('withdraw').value)
+                      }
                     >
                       Withdraw*
                     </button>
