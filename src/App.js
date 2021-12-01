@@ -8,6 +8,7 @@ import Vault from "./contracts/Vault.json";
 import ICO from "./contracts/ICO.json";
 import BUSD from "./contracts/BUSD.json";
 function App() {
+  const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [address, setAddress] = useState(null);
   const [web3, setWeb3] = useState(null);
@@ -18,10 +19,11 @@ function App() {
   const [busdBalance, setBusdBalance] = useState("0");
   const [vaultBalance, setVaultBalance] = useState("0");
   const [earnings, setEarnings] = useState("0");
-  const [time, setTime] = useState("0");
+  const [time, setTime] = useState(0);
 
   async function connectWallet() {
     try {
+      setLoading(true);
       if (window.ethereum) {
         const _web3 = new Web3(window.ethereum);
         setWeb3(_web3);
@@ -53,11 +55,14 @@ function App() {
         let e = await _vault.methods
           .earned(window.ethereum.selectedAddress)
           .call();
-        let l = await _vault.methods.lastTimeRewardApplicable().call();
-
+        let c = await _vault.methods
+          .newDeposit(window.ethereum.selectedAddress)
+          .call();
+        let d = await _vault.methods.hodlDuration().call();
         setVaultBalance(_web3.utils.fromWei(b, "ether"));
         setEarnings(_web3.utils.fromWei(e, "ether"));
-        setTime(l);
+        setTime(parseInt(c) + parseInt(d));
+        console.log(parseInt(c) + parseInt(d));
 
         let _busd = new _web3.eth.Contract(BUSD.abi, BUSD.address);
         setBusd(_busd);
@@ -65,6 +70,7 @@ function App() {
           .balanceOf(window.ethereum.selectedAddress)
           .call();
         setBusdBalance(_web3.utils.fromWei(busd_balance, "ether"));
+        setLoading(false);
       } else {
         alert("please install metamask");
         return;
@@ -144,36 +150,48 @@ function App() {
 
   return (
     <>
-      <main className={` ${darkMode && "dark-mode"}`}>
-        <button
-          type="button"
-          className="btn btn-primary fixed-top top-50 end-0 icon-size-small rounded-right-full"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          <img
-            className="h-100 w-100 d-block"
-            src={`/assets/${darkMode ? "moon" : "sun"}.png`}
-            alt="dark-mode"
+      {!loading ? (
+        <main className={` ${darkMode && "dark-mode"}`}>
+          <button
+            type="button"
+            className="btn btn-primary fixed-top top-50 end-0 icon-size-small rounded-right-full"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            <img
+              className="h-100 w-100 d-block"
+              src={`/assets/${darkMode ? "moon" : "sun"}.png`}
+              alt="dark-mode"
+            />
+          </button>
+          <NavbarPrimary
+            connectWallet={connectWallet}
+            address={address}
+            buyToken={buyToken}
           />
-        </button>
-        <NavbarPrimary
-          connectWallet={connectWallet}
-          address={address}
-          buyToken={buyToken}
-        />
-        <RoutesPrimary
-          brickBalance={brickBalance}
-          busdBalance={busdBalance}
-          buyToken={buyToken}
-          depositToVault={depositToVault}
-          withdraw={withdraw}
-          getReward={getReward}
-          vaultBalance={vaultBalance}
-          earnings={earnings}
-          time={time}
-        />
-        <FooterPrimary />
-      </main>
+          <RoutesPrimary
+            brickBalance={brickBalance}
+            busdBalance={busdBalance}
+            buyToken={buyToken}
+            depositToVault={depositToVault}
+            withdraw={withdraw}
+            getReward={getReward}
+            vaultBalance={vaultBalance}
+            earnings={earnings}
+            time={time}
+          />
+          <FooterPrimary />
+        </main>
+      ) : (
+        <h1
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+          }}
+        >
+          Loading...
+        </h1>
+      )}
     </>
   );
 }

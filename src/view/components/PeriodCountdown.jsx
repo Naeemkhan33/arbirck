@@ -22,7 +22,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 };
 
 const PeriodCountdown = ({time}) => {
-  return <Countdown date={Date.now() + 5000000000} renderer={renderer} />;
+  return <Countdown date={Date.now() + time*1000} renderer={renderer} />;
 };
 
 export default PeriodCountdown;
