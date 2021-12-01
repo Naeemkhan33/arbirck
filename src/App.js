@@ -19,7 +19,6 @@ function App() {
   const [vaultBalance, setVaultBalance] = useState("0");
   const [earnings, setEarnings] = useState("0");
   const [time, setTime] = useState("0");
-  
 
   async function connectWallet() {
     try {
@@ -43,34 +42,36 @@ function App() {
         let brick_balance = await _token.methods
           .balanceOf(window.ethereum.selectedAddress)
           .call();
-        setBrickBalance(_web3.utils.fromWei(brick_balance,"ether"));
+        setBrickBalance(_web3.utils.fromWei(brick_balance, "ether"));
+
         let _vault = new _web3.eth.Contract(Vault.abi, Vault.address);
         setVault(_vault);
-        
+
         let b = await _vault.methods
-        .balanceOf(window.ethereum.selectedAddress)
-        .call()
+          .balanceOf(window.ethereum.selectedAddress)
+          .call();
         let e = await _vault.methods
-        .earned(window.ethereum.selectedAddress)
-        .call()
-        let l = await _vault.methods
-        .lastTimeRewardApplicable().call()
+          .earned(window.ethereum.selectedAddress)
+          .call();
+        let l = await _vault.methods.lastTimeRewardApplicable().call();
 
-        setTime(l)
-        setEarnings(_web3.utils.fromWei(e,"ether"))
+        setVaultBalance(_web3.utils.fromWei(b, "ether"));
+        setEarnings(_web3.utils.fromWei(e, "ether"));
+        setTime(l);
 
-        setVaultBalance(_web3.utils.fromWei(b,"ether"))
         let _busd = new _web3.eth.Contract(BUSD.abi, BUSD.address);
+        setBusd(_busd);
         let busd_balance = await _busd.methods
           .balanceOf(window.ethereum.selectedAddress)
           .call();
-        setBusdBalance(_web3.utils.fromWei(busd_balance,"ether"));
-        setBusd(_busd);
+        setBusdBalance(_web3.utils.fromWei(busd_balance, "ether"));
       } else {
         alert("please install metamask");
+        return;
       }
     } catch (e) {
-      alert("Error:", e.message);
+      alert("Error:", e);
+      return;
     }
   }
 
@@ -84,6 +85,10 @@ function App() {
           await ico.methods
             .buyTokens(window.ethereum.selectedAddress, a)
             .send({ from: window.ethereum.selectedAddress });
+        })
+        .on("error", async (e) => {
+          console.log("Error", e);
+          return;
         });
     } catch (e) {
       console.log(e.message);
@@ -95,7 +100,11 @@ function App() {
       let a = await web3.utils.toWei(amount);
       await vault.methods
         .stake(a)
-        .send({ from: window.ethereum.selectedAddress });
+        .send({ from: window.ethereum.selectedAddress })
+        .on("error", async (e) => {
+          console.log("Error", e);
+          return;
+        });
     } catch (e) {
       console.log(e.message);
       return;
@@ -107,7 +116,11 @@ function App() {
       let a = await web3.utils.toWei(amount);
       await vault.methods
         .withdraw(a)
-        .send({ from: window.ethereum.selectedAddress });
+        .send({ from: window.ethereum.selectedAddress })
+        .on("error", async (e) => {
+          console.log("Error", e);
+          return;
+        });
     } catch (e) {
       console.log(e.message);
       return;
@@ -118,15 +131,16 @@ function App() {
     try {
       await vault.methods
         .getReward()
-        .send({ from: window.ethereum.selectedAddress });
+        .send({ from: window.ethereum.selectedAddress })
+        .on("error", async (e) => {
+          console.log("Error", e);
+          return;
+        });
     } catch (e) {
       console.log(e.message);
       return;
     }
   }
-
-
-
 
   return (
     <>
