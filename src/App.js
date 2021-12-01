@@ -14,7 +14,6 @@ function App() {
   const [ico, setIco] = useState(null);
   const [busd, setBusd] = useState(null);
   const [vault, setVault] = useState(null);
-  const [token, setToken] = useState(null);
   const [brickBalance, setBrickBalance] = useState("0");
   const [busdBalance, setBusdBalance] = useState("0");
   const [vaultBalance, setVaultBalance] = useState("0");
@@ -45,7 +44,6 @@ function App() {
           .balanceOf(window.ethereum.selectedAddress)
           .call();
         setBrickBalance(_web3.utils.fromWei(brick_balance,"ether"));
-        setToken(_token);
         let _vault = new _web3.eth.Contract(Vault.abi, Vault.address);
         setVault(_vault);
         
