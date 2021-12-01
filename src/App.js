@@ -17,6 +17,10 @@ function App() {
   const [token, setToken] = useState(null);
   const [brickBalance, setBrickBalance] = useState("0");
   const [busdBalance, setBusdBalance] = useState("0");
+  const [vaultBalance, setVaultBalance] = useState("0");
+  const [earnings, setEarnings] = useState("0");
+  const [time, setTime] = useState("0");
+  
 
   async function connectWallet() {
     try {
@@ -40,15 +44,29 @@ function App() {
         let brick_balance = await _token.methods
           .balanceOf(window.ethereum.selectedAddress)
           .call();
-        setBrickBalance(brick_balance);
+        setBrickBalance(_web3.utils.fromWei(brick_balance,"ether"));
         setToken(_token);
         let _vault = new _web3.eth.Contract(Vault.abi, Vault.address);
         setVault(_vault);
+        
+        let b = await _vault.methods
+        .balanceOf(window.ethereum.selectedAddress)
+        .call()
+        let e = await _vault.methods
+        .earned(window.ethereum.selectedAddress)
+        .call()
+        let l = await _vault.methods
+        .lastTimeRewardApplicable().call()
+
+        setTime(l)
+        setEarnings(_web3.utils.fromWei(e,"ether"))
+
+        setVaultBalance(_web3.utils.fromWei(b,"ether"))
         let _busd = new _web3.eth.Contract(BUSD.abi, BUSD.address);
         let busd_balance = await _busd.methods
           .balanceOf(window.ethereum.selectedAddress)
           .call();
-        setBusdBalance(busd_balance);
+        setBusdBalance(_web3.utils.fromWei(busd_balance,"ether"));
         setBusd(_busd);
       } else {
         alert("please install metamask");
@@ -109,6 +127,9 @@ function App() {
     }
   }
 
+
+
+
   return (
     <>
       <main className={` ${darkMode && "dark-mode"}`}>
@@ -135,6 +156,9 @@ function App() {
           depositToVault={depositToVault}
           withdraw={withdraw}
           getReward={getReward}
+          vaultBalance={vaultBalance}
+          earnings={earnings}
+          time={time}
         />
         <FooterPrimary />
       </main>

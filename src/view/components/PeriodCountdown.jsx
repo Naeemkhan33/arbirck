@@ -21,7 +21,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
-const PeriodCountdown = () => {
+const PeriodCountdown = ({time}) => {
   return <Countdown date={Date.now() + 5000000000} renderer={renderer} />;
 };
 

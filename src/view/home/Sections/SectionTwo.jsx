@@ -4,7 +4,7 @@ import Chartbar from '../../components/Chartbar';
 import MonochromePie from '../../components/MonochromePie';
 import PeriodCountdown from '../../components/PeriodCountdown';
 
-const SectionTwo = ({withdraw,depositToVault,getReward}) => {
+const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getReward}) => {
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -57,9 +57,9 @@ const SectionTwo = ({withdraw,depositToVault,getReward}) => {
                     <div className='h2 mb-0 fw-bold'>
                       <h4 className='fw-bold mb-0'>Vault</h4>
                       <div className='d-flex align-items-baseline'>
-                        <span className='me-2'>150,000</span>{' '}
+                        <span className='me-2'>{vaultBalance}</span>{' '}
                         <h6 className='mb-0 text-uppercase'>
-                          <div>BRICKS</div> ~$30,000
+                          <div>BRICKS</div> ~${earnings}
                         </h6>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const SectionTwo = ({withdraw,depositToVault,getReward}) => {
                   <span className='d-flex'>
                     <div className='h2 mb-0 fw-bold'>
                       <div className='d-flex align-items-baseline'>
-                        <span className='me-2'>$1,250</span>{' '}
+                        <span className='me-2'>${earnings}</span>{' '}
                         <h6 className='mb-0 text-uppercase'>BUSD</h6>
                       </div>
                     </div>
@@ -120,7 +120,7 @@ const SectionTwo = ({withdraw,depositToVault,getReward}) => {
                 <div className='text-center mt-4'>
                   <h5 className='mb-0 fw-normal'>Lock up period - Countdown</h5>
                   <div className='my-2'>
-                    <PeriodCountdown />
+                    <PeriodCountdown time={time}/>
                   </div>
                   <h6 className='mb-0 fw-normal'>
                     *Early withdrawal includes a 50% penalty fee.
