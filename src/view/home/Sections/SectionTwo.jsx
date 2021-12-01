@@ -4,11 +4,7 @@ import Chartbar from '../../components/Chartbar';
 import MonochromePie from '../../components/MonochromePie';
 import PeriodCountdown from '../../components/PeriodCountdown';
 
-<<<<<<< HEAD
 const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getReward}) => {
-=======
-const SectionTwo = ({ withdraw, depositToVault, getReward }) => {
->>>>>>> 84e0e837f71fb06374be2940efeeb967bb1e9fd0
   return (
     <section className='pb-5'>
       <div className='container'>
