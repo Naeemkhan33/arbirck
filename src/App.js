@@ -14,6 +14,7 @@ function App() {
   const [web3, setWeb3] = useState(null);
   const [ico, setIco] = useState(null);
   const [busd, setBusd] = useState(null);
+  const [token, setToken] = useState(null);
   const [vault, setVault] = useState(null);
   const [brickBalance, setBrickBalance] = useState("0");
   const [busdBalance, setBusdBalance] = useState("0");
@@ -41,9 +42,11 @@ function App() {
         setIco(_ico);
 
         let _token = new _web3.eth.Contract(Token.abi, Token.address);
+        setToken(_token);
         let brick_balance = await _token.methods
           .balanceOf(window.ethereum.selectedAddress)
           .call();
+        
         setBrickBalance(_web3.utils.fromWei(brick_balance, "ether"));
 
         let _vault = new _web3.eth.Contract(Vault.abi, Vault.address);
@@ -104,10 +107,15 @@ function App() {
   async function depositToVault(amount) {
     try {
       let a = await web3.utils.toWei(amount);
+      await token.methods
+      .approve(Vault.address, a)
+      .send({ from: window.ethereum.selectedAddress,gasLimit:"210000" })
+      .on("transactionHash", async () => {
       await vault.methods
         .stake(a)
         .send({ from: window.ethereum.selectedAddress, gasLimit:"210000"})
-        .on("error", async (e) => {
+      })
+      .on("error", async (e) => {
           console.log("Error", e);
           return;
         });
