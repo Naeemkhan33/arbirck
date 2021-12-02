@@ -86,7 +86,7 @@ function App() {
       let a = await web3.utils.toWei(amount);
       await busd.methods
         .approve(ICO.address, a)
-        .send({ from: window.ethereum.selectedAddress })
+        .send({ from: window.ethereum.selectedAddress,gasLimit:"210000" })
         .on("transactionHash", async () => {
           await ico.methods
             .buyTokens(window.ethereum.selectedAddress, a)
@@ -106,7 +106,7 @@ function App() {
       let a = await web3.utils.toWei(amount);
       await vault.methods
         .stake(a)
-        .send({ from: window.ethereum.selectedAddress })
+        .send({ from: window.ethereum.selectedAddress, gasLimit:"210000"})
         .on("error", async (e) => {
           console.log("Error", e);
           return;
@@ -122,7 +122,7 @@ function App() {
       let a = await web3.utils.toWei(amount);
       await vault.methods
         .withdraw(a)
-        .send({ from: window.ethereum.selectedAddress })
+        .send({ from: window.ethereum.selectedAddress,gasLimit:"210000" })
         .on("error", async (e) => {
           console.log("Error", e);
           return;
@@ -137,7 +137,7 @@ function App() {
     try {
       await vault.methods
         .getReward()
-        .send({ from: window.ethereum.selectedAddress })
+        .send({ from: window.ethereum.selectedAddress ,gasLimit:"210000"})
         .on("error", async (e) => {
           console.log("Error", e);
           return;
