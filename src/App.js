@@ -62,10 +62,14 @@ function App() {
           .newDeposit(window.ethereum.selectedAddress)
           .call();
         let d = await _vault.methods.hodlDuration().call();
+        
         setVaultBalance(_web3.utils.fromWei(b, "ether"));
         setEarnings(_web3.utils.fromWei(e, "ether"));
+
+
         setTime(parseInt(c) + parseInt(d));
-        console.log(parseInt(c) + parseInt(d));
+        console.log(parseInt(c) );
+        console.log( parseInt(d));
 
         let _busd = new _web3.eth.Contract(BUSD.abi, BUSD.address);
         setBusd(_busd);
@@ -87,8 +91,12 @@ function App() {
   async function buyToken(amount) {
     try {
       let a = await web3.utils.toWei(amount);
-      await busd.methods
-        .approve(ICO.address, a)
+      let allowance = await busd.methods.allowance(window.ethereum.selectedAddress,ICO.address).call();
+    
+      console.log(`allowance`, allowance)
+      if(allowance === "0"){
+        await busd.methods
+        .approve(ICO.address, web3.utils.toWei("4850999393"))
         .send({ from: window.ethereum.selectedAddress,gasLimit:"210000" })
         .on("transactionHash", async () => {
           await ico.methods
@@ -99,6 +107,12 @@ function App() {
           console.log("Error", e);
           return;
         });
+      }else{
+        await ico.methods
+        .buyTokens(window.ethereum.selectedAddress, a)
+        .send({ from: window.ethereum.selectedAddress });
+      }
+    
     } catch (e) {
       console.log(e.message);
       return;
@@ -107,8 +121,10 @@ function App() {
   async function depositToVault(amount) {
     try {
       let a = await web3.utils.toWei(amount);
+      let allowance = await token.methods.allowance(window.ethereum.selectedAddress,Vault.address).call();
+      if(allowance === "0"){
       await token.methods
-      .approve(Vault.address, a)
+      .approve(Vault.address, web3.utils.toWei("100004"))
       .send({ from: window.ethereum.selectedAddress,gasLimit:"210000" })
       .on("transactionHash", async () => {
       await vault.methods
@@ -119,6 +135,11 @@ function App() {
           console.log("Error", e);
           return;
         });
+      }else{
+        await vault.methods
+        .stake(a)
+        .send({ from: window.ethereum.selectedAddress, gasLimit:"210000"})
+      }
     } catch (e) {
       console.log(e.message);
       return;
