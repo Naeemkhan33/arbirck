@@ -82,6 +82,7 @@ const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getRewar
                     >
                       Deposit
                     </button>
+                    <button onClick={()=> document.getElementById("deposit").value = vaultBalance}>MAX</button>
                   </div>
                   <div className='d-flex flex-column' style={{ width: '48%' }}>
                     <input
@@ -98,6 +99,7 @@ const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getRewar
                     >
                       Withdraw*
                     </button>
+                    <button onClick={()=> document.getElementById("withdraw").value = vaultBalance}>MAX</button>
                   </div>
                 </div>
               </div>

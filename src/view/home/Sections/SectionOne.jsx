@@ -128,6 +128,7 @@ const SectionOne = ({
                   >
                     Deposit into Vault
                   </button>
+                  <button onClick={()=> document.getElementById("deposite").value = brickBalance}>MAX</button>
                 </div>
               </div>
               <div className='mt-3'>
@@ -164,6 +165,7 @@ const SectionOne = ({
                   >
                     Reinvest Rent
                   </button>
+                  <button onClick={()=> document.getElementById("buy").value = busdBalance}>MAX</button>
                 </div>
               </div>
             </div>
