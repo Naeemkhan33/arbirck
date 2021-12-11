@@ -4,7 +4,7 @@ import Chartbar from '../../components/Chartbar';
 import MonochromePie from '../../components/MonochromePie';
 import PeriodCountdown from '../../components/PeriodCountdown';
 
-const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getReward}) => {
+const SectionTwo = ({time,earnings,vaultBalance,brickBalance,withdraw,depositToVault,getReward}) => {
   return (
     <section className='pb-5'>
       <div className='container'>
@@ -82,7 +82,8 @@ const SectionTwo = ({time,earnings,vaultBalance,withdraw,depositToVault,getRewar
                     >
                       Deposit
                     </button>
-                    <button onClick={()=> document.getElementById("deposit").value = vaultBalance}>MAX</button>
+                    {/* <button onClick={()=> document.getElementById("deposit").value = vaultBalance}>MAX</button> */}
+                    <button onClick={()=> document.getElementById("deposite").value = brickBalance}>MAX</button>
                   </div>
                   <div className='d-flex flex-column' style={{ width: '48%' }}>
                     <input
