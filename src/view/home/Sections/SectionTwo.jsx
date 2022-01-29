@@ -59,7 +59,7 @@ const SectionTwo = ({time,earnings,vaultBalance,brickBalance,withdraw,depositToV
                       <div className='d-flex align-items-baseline'>
                         <span className='me-2'>{vaultBalance}</span>{' '}
                         <h6 className='mb-0 text-uppercase'>
-                          <div>BRICKS</div> ~${earnings}
+                          <div>BRICKS</div> ~${parseFloat(earnings).toFixed(2)}
                         </h6>
                       </div>
                     </div>
@@ -116,7 +116,7 @@ const SectionTwo = ({time,earnings,vaultBalance,brickBalance,withdraw,depositToV
                   <span className='d-flex'>
                     <div className='h2 mb-0 fw-bold'>
                       <div className='d-flex align-items-baseline'>
-                        <span className='me-2'>${earnings}</span>{' '}
+                        <span className='me-2'>${parseFloat(earnings).toFixed(2)}</span>{' '}
                         <h6 className='mb-0 text-uppercase'>BUSD</h6>
                       </div>
                     </div>
