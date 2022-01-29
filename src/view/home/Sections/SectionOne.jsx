@@ -106,7 +106,7 @@ const SectionOne = ({
                       <div className='d-flex align-items-baseline'>
                         <span className='me-2'>{brickBalance} </span>{' '}
                         <h6 className='mb-0 text-uppercase'>
-                          <div>BRICKS</div> ~${brickBalance}
+                          <div>BRICKS</div> ~${brickBalance.toFixed()}
                         </h6>
                       </div>
                     </div>
