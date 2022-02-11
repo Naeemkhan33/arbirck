@@ -153,6 +153,7 @@ const SectionOne = ({
                     Deposit into Vault
                   </button>
                   <button
+                    className="mt-2 btn btn-sm max rounded-lg"
                     onClick={() =>
                       (document.getElementById("deposite").value = brickBalance)
                     }
@@ -196,6 +197,7 @@ const SectionOne = ({
                     Reinvest Rent
                   </button>
                   <button
+                    className="mt-2 btn btn-sm max rounded-lg"
                     onClick={() =>
                       (document.getElementById("buy").value = busdBalance)
                     }

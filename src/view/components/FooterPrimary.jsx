@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSinglePrismicDocument } from "@prismicio/react";
+import { FaAirbnb } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 
 const FooterPrimary = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +29,7 @@ const FooterPrimary = () => {
           <div className="col-11 col-md-4 col-xl-3 mt-4 mt-md-0 ms-md-auto">
             <div className="d-flex gap-4 filter-invert justify-content-md-end mt-md-4 ms-2">
               <a
-                href="https://t.me/NileRiver_Labs"
+                href="https://t.me/airbrickfinance"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -42,6 +44,20 @@ const FooterPrimary = () => {
                     fill="white"
                   />
                 </svg>
+              </a>
+              <a
+                href="https://www.airbnb.co.uk/p/airbrick"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FaAirbnb color="white" size="1.2em" />
+              </a>
+              <a
+                href="https://www.instagram.com/airbrickfinance/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <AiFillInstagram color="white" size="1.2em" />
               </a>
               <a
                 href="https://twitter.com/NileRiver_Labs"
@@ -60,6 +76,7 @@ const FooterPrimary = () => {
                   />
                 </svg>
               </a>
+
               <a
                 href="https://medium.com/@nileriver"
                 rel="noopener noreferrer"

@@ -124,6 +124,7 @@ const SectionTwo = ({
                     </button>
                     {/* <button onClick={()=> document.getElementById("deposit").value = vaultBalance}>MAX</button> */}
                     <button
+                      className="mt-2 btn btn-sm max rounded-lg"
                       onClick={() =>
                         (document.getElementById("deposite").value =
                           brickBalance)
@@ -148,6 +149,7 @@ const SectionTwo = ({
                       Withdraw*
                     </button>
                     <button
+                      className="mt-2 btn btn-sm max rounded-lg"
                       onClick={() =>
                         (document.getElementById("withdraw").value =
                           vaultBalance)
